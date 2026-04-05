@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+    /* Colors */
+    --color-primary: #11d483;
+    --color-background-light: #f6f8f7;
+    --color-background-dark: #10221a;
+
+    /* Font families */
+    --font-display: "Inter", sans-serif;
+
+    /* Border radius */
+    --radius: 0.25rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-full: 9999px;
+}
+
+/* Dark mode via class strategy */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    body {
+        font-family: "Inter", sans-serif;
+    }
+}
+
+@layer components {
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(8px);
+    }
+}
