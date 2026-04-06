@@ -1,0 +1,25 @@
+{
+	"compatibility_date": "2026-04-05",
+	"compatibility_flags": [
+		"global_fetch_strictly_public"
+	],
+	"name": "iant",
+	"main": "@astrojs/cloudflare/entrypoints/server",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"r2_buckets": [
+		{
+			"binding": "MEDIA_BUCKET",
+			"bucket_name": "iant-media"
+		}
+	]
+	// Secrets — set via: wrangler secret put CF_ACCOUNT_ID / CF_IMAGES_TOKEN
+	// For local dev create .dev.vars:
+	//   CF_ACCOUNT_ID=your_account_id
+	//   CF_IMAGES_TOKEN=your_images_api_token  (Images:Edit permission)
+}
