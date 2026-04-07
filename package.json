@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "iant",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-types": "wrangler types"
+    "types": "wrangler types"
   },
   "dependencies": {},
   "devDependencies": {

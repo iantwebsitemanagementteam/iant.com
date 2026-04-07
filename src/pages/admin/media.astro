@@ -112,7 +112,7 @@ export const prerender = false;
             </div>
             <div
                 id="grid"
-                class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"
+                class="hidden grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"
             >
             </div>
         </div>
@@ -121,10 +121,10 @@ export const prerender = false;
     <!-- ── Upload Modal ──────────────────────────────────────────── -->
     <div
         id="upload-modal"
-        class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+        class="hidden fixed inset-0 z-50 p-4 bg-black/60 backdrop-blur-sm overflow-y-auto"
     >
         <div
-            class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-lg p-8 relative"
+            class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-lg p-8 relative mx-auto my-8"
         >
             <button
                 id="btn-close-upload"
@@ -224,10 +224,10 @@ export const prerender = false;
     <!-- ── Edit Metadata Modal ───────────────────────────────────── -->
     <div
         id="edit-modal"
-        class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+        class="hidden fixed inset-0 z-50 p-4 bg-black/60 backdrop-blur-sm overflow-y-auto"
     >
         <div
-            class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-lg p-8 relative max-h-[90vh] overflow-y-auto"
+            class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-lg p-8 relative max-h-[90vh] overflow-y-auto mx-auto my-8"
         >
             <button
                 id="btn-close-edit"
@@ -344,10 +344,10 @@ export const prerender = false;
     <!-- ── Delete Confirmation Modal ────────────────────────────── -->
     <div
         id="delete-modal"
-        class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+        class="hidden fixed inset-0 z-50 p-4 bg-black/60 backdrop-blur-sm overflow-y-auto"
     >
         <div
-            class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-sm p-8 text-center"
+            class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-sm p-8 text-center mx-auto my-8"
         >
             <div
                 class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -422,6 +422,16 @@ export const prerender = false;
             }
             function srcLabel(source: string) {
                 return source === "cf-images" ? "Cloudflare Images" : "R2";
+            }
+            function resolveItemUrl(item: any) {
+                if (!item?.url) return "";
+                if (typeof item.url !== "string") return "";
+                if (
+                    item.url.startsWith("http://") ||
+                    item.url.startsWith("https://")
+                )
+                    return item.url;
+                return `${window.location.origin}${item.url}`;
             }
 
             // ── Load media ────────────────────────────────────────────
@@ -502,14 +512,18 @@ export const prerender = false;
                 const items = filtered();
                 if (items.length === 0) {
                     grid.classList.add("hidden");
+                    grid.classList.remove("grid");
                     empty.classList.remove("hidden");
                     return;
                 }
                 empty.classList.add("hidden");
                 grid.classList.remove("hidden");
+                grid.classList.add("grid");
                 grid.innerHTML = items
                     .map((item) => {
                         const name = escHtml(item.name || item.key || item.id);
+                        const itemUrl = resolveItemUrl(item);
+                        const safeUrl = escHtml(itemUrl);
                         const badge =
                             item.source === "cf-images"
                                 ? `<span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-1.5 py-0.5 rounded">CF</span>`
@@ -518,7 +532,9 @@ export const prerender = false;
                             item.source === "cf-images" && item.variants?.[0]
                                 ? `<img src="${escHtml(item.variants[0])}" alt="${name}" class="w-full h-32 object-cover" loading="lazy" />`
                                 : item.isImage && item.source === "r2"
-                                  ? `<div class="w-full h-32 flex items-center justify-center bg-slate-100 dark:bg-slate-800"><svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>`
+                                  ? itemUrl
+                                      ? `<img src="${safeUrl}" alt="${name}" class="w-full h-32 object-cover" loading="lazy" />`
+                                      : `<div class="w-full h-32 flex items-center justify-center bg-slate-100 dark:bg-slate-800"><svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>`
                                   : `<div class="w-full h-32 flex items-center justify-center bg-slate-100 dark:bg-slate-800"><svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>`;
                         const encodedId = encodeURIComponent(
                             item.cfId || item.key,
@@ -532,6 +548,17 @@ export const prerender = false;
 						<p class="text-xs font-semibold truncate text-slate-800 dark:text-slate-200" title="${name}">${name}</p>
 						<p class="text-[10px] text-slate-400 mt-0.5">${escHtml(item.contentType || "")}</p>
 						<p class="text-[10px] text-slate-400">${formatBytes(item.size)}</p>
+                        ${
+                            itemUrl
+                                ? `<div class="mt-2">
+                            <p class="text-[10px] text-slate-400 truncate" title="${safeUrl}">${safeUrl}</p>
+                            <div class="flex gap-1 mt-1">
+                                <a href="${safeUrl}" target="_blank" rel="noopener noreferrer" class="py-1 px-2 text-[11px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors">Open</a>
+                                <button class="btn-copy-url py-1 px-2 text-[11px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-200 hover:bg-primary hover:text-background-dark rounded-lg transition-colors" data-url="${safeUrl}">Copy URL</button>
+                            </div>
+                        </div>`
+                                : ""
+                        }
 						<div class="flex gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
 							<button class="btn-edit flex-1 py-1 text-[11px] font-bold bg-primary/10 text-primary hover:bg-primary hover:text-background-dark rounded-lg transition-colors"
 								data-item='${escHtml(JSON.stringify(item))}'>Edit</button>
@@ -559,6 +586,22 @@ export const prerender = false;
                             JSON.parse((btn as HTMLElement).dataset.item!),
                         ),
                     );
+                });
+                grid.querySelectorAll(".btn-copy-url").forEach((btn) => {
+                    btn.addEventListener("click", async () => {
+                        const url = (btn as HTMLElement).dataset.url || "";
+                        if (!url) return;
+                        try {
+                            await navigator.clipboard.writeText(url);
+                            const original = (btn as HTMLElement).textContent;
+                            (btn as HTMLElement).textContent = "Copied";
+                            setTimeout(() => {
+                                (btn as HTMLElement).textContent = original;
+                            }, 1000);
+                        } catch {
+                            // no-op: clipboard may be blocked in some contexts
+                        }
+                    });
                 });
             }
 

@@ -6,7 +6,7 @@ export const prerender = false;
 const IMAGE_MIME_PREFIXES = ["image/"];
 
 function isImageType(contentType: string | undefined): boolean {
-	return IMAGE_MIME_PREFIXES.some((p) => contentType?.startsWith(p));
+    return IMAGE_MIME_PREFIXES.some((p) => contentType?.startsWith(p));
 }
 
 export const GET: APIRoute = async () => {
@@ -31,6 +31,7 @@ export const GET: APIRoute = async () => {
                     customMetadata: head?.customMetadata ?? {},
                     source: "r2" as const,
                     isImage: isImageType(contentType),
+                    url: `/api/media/file?key=${encodeURIComponent(obj.key)}`,
                 };
             })
         );
@@ -54,6 +55,7 @@ export const GET: APIRoute = async () => {
                     contentType: "image/*",
                     uploaded: img.uploaded,
                     variants: img.variants,
+                    url: img.variants?.[0] ?? null,
                     customMetadata: img.meta ?? {},
                     source: "cf-images" as const,
                     isImage: true,

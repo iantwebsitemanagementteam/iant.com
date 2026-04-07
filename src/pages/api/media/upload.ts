@@ -16,6 +16,19 @@ function isImageFile(filename: string, contentType: string): boolean {
     return IMAGE_EXTENSIONS.has(getExtension(filename));
 }
 
+async function uploadToR2(
+    file: File,
+    customMetadata: Record<string, string>,
+    displayName: string | null,
+) {
+    const key = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_")}`;
+    await env.MEDIA_BUCKET.put(key, await file.arrayBuffer(), {
+        httpMetadata: { contentType: file.type || "application/octet-stream" },
+        customMetadata: { ...customMetadata, displayName: displayName ?? file.name },
+    });
+    return key;
+}
+
 export const POST: APIRoute = async ({ request }) => {
 
     try {
@@ -51,29 +64,47 @@ export const POST: APIRoute = async ({ request }) => {
                 uploadForm.append("metadata", JSON.stringify(customMetadata));
             }
 
-            const res = await fetch(
-                `https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/images/v1`,
-                {
-                    method: "POST",
-                    headers: { Authorization: `Bearer ${env.CF_IMAGES_TOKEN}` },
-                    body: uploadForm,
+            try {
+                const res = await fetch(
+                    `https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/images/v1`,
+                    {
+                        method: "POST",
+                        headers: { Authorization: `Bearer ${env.CF_IMAGES_TOKEN}` },
+                        body: uploadForm,
+                    }
+                );
+                const data = (await res.json()) as { result?: { id: string; filename: string }; errors?: Array<{ message: string }> };
+                if (res.ok) {
+                    return Response.json({ ok: true, source: "cf-images", result: data.result });
                 }
-            );
-            const data = (await res.json()) as { result?: { id: string; filename: string }; errors?: Array<{ message: string }> };
-            if (!res.ok) {
+
+                // If Images auth is misconfigured, gracefully fall back to R2.
+                if (res.status === 401 || res.status === 403) {
+                    const key = await uploadToR2(file, customMetadata, displayName);
+                    return Response.json({
+                        ok: true,
+                        source: "r2",
+                        key,
+                        warning: data.errors?.[0]?.message ?? "CF Images rejected upload; stored in R2 instead",
+                    });
+                }
+
                 return Response.json(
                     { ok: false, error: data.errors?.[0]?.message ?? "CF Images upload failed" },
                     { status: res.status }
                 );
+            } catch {
+                const key = await uploadToR2(file, customMetadata, displayName);
+                return Response.json({
+                    ok: true,
+                    source: "r2",
+                    key,
+                    warning: "CF Images request failed; stored in R2 instead",
+                });
             }
-            return Response.json({ ok: true, source: "cf-images", result: data.result });
         } else {
             // ── Upload to R2 ─────────────────────────────────────────────
-            const key = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_")}`;
-            await env.MEDIA_BUCKET.put(key, await file.arrayBuffer(), {
-                httpMetadata: { contentType: file.type || "application/octet-stream" },
-                customMetadata: { ...customMetadata, displayName: displayName ?? file.name },
-            });
+            const key = await uploadToR2(file, customMetadata, displayName);
             return Response.json({ ok: true, source: "r2", key });
         }
     } catch (err) {
