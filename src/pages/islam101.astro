@@ -1,0 +1,347 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <Nav />
+
+    <main class="max-w-7xl mx-auto px-2 py-8 space-y-16">
+        <!-- Hero Section -->
+        <div class="px-6 md:px-20 py-10">
+            <div
+                class="relative overflow-hidden rounded-xl bg-slate-900 min-h-125 flex flex-col items-center justify-center text-center p-8"
+            >
+                <div
+                    class="absolute inset-0 opacity-40 bg-cover bg-center"
+                    data-alt="Grand mosque interior with beautiful architecture"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCepMcxHgOPNqnD7j16iO1kGxVNJNN6BqaMzTMxsFuOyhe0RrAlvlJiSQhjyqETYjMG8HVHFeJ_g9zdGGonvF-7LS2A2M0gzNkSBVfE6K6Awvwky55wYiGuoJYryk7cbJ96OZdkOe1QFh1UcdEt2jHAbRAReLwJtOTMfgTCZ7-vs9kw1G2-59QTeJhIscwE5_1p_cSijcrDPWE1OcfOp5TCUjeMN6s2uBvuycl50KmpisL_fJob91t6tNXd3v3DFpsNfvHu0ilMImo4');"
+                >
+                </div>
+                <div
+                    class="absolute inset-0 bg-linear-to-t from-background-dark/80 to-transparent"
+                >
+                </div>
+                <div class="relative z-10 max-w-3xl">
+                    <h1
+                        class="text-white text-4xl md:text-6xl font-black font-display leading-tight tracking-tight mb-4"
+                    >
+                        Welcome Home: Support for New Muslims
+                    </h1>
+                    <p
+                        class="text-slate-200 text-lg md:text-xl font-normal mb-8"
+                    >
+                        Embark on your journey with a supportive community,
+                        dedicated mentors, and authentic resources to help you
+                        grow in your faith.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button
+                            class="h-12 px-8 bg-primary text-background-dark rounded-lg font-bold text-base hover:bg-primary/90 transition-all"
+                        >
+                            Join the Program
+                        </button>
+                        <button
+                            class="h-12 px-8 bg-white/10 text-white backdrop-blur-sm border border-white/20 rounded-lg font-bold text-base hover:bg-white/20 transition-all"
+                        >
+                            Request a Mentor
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-6 md:px-20 max-w-7xl mx-auto">
+            <!-- Introductory Classes Schedule -->
+            <section class="mb-16">
+                <div class="flex items-center justify-between mb-6">
+                    <h2
+                        class="text-slate-900 dark:text-slate-100 text-2xl md:text-3xl font-bold font-display"
+                    >
+                        Introductory Classes
+                    </h2>
+                    <span
+                        class="text-primary text-sm font-medium px-3 py-1 bg-primary/10 rounded-full"
+                        >Enrolling Now</span
+                    >
+                </div>
+                <div
+                    class="overflow-x-auto rounded-xl border border-primary/10 bg-white dark:bg-background-dark shadow-sm"
+                >
+                    <table class="w-full text-left border-collapse min-w-250">
+                        <thead>
+                            <tr class="bg-primary/5">
+                                <th class="px-6 py-4 font-bold text-primary"
+                                    >Class Name</th
+                                >
+                                <th class="px-6 py-4 font-bold text-primary"
+                                    >Day</th
+                                >
+                                <th class="px-6 py-4 font-bold text-primary"
+                                    >Time</th
+                                >
+                                <th class="px-6 py-4 font-bold text-primary"
+                                    >Instructor</th
+                                >
+                                <th class="px-6 py-4 font-bold text-primary"
+                                    >Status</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm divide-y divide-primary/5">
+                            <tr class="hover:bg-primary/5 transition-colors">
+                                <td class="px-6 py-5 text-sm font-medium"
+                                    >Foundations of Islam (Level 1)</td
+                                >
+                                <td
+                                    class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                                    >Saturdays</td
+                                >
+                                <td
+                                    class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                                    >10:00 AM - 11:30 AM</td
+                                >
+                                <td
+                                    class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                                    >Imam Ahmed</td
+                                >
+                                <td class="px-6 py-5 text-sm"
+                                    ><span
+                                        class="text-primary bg-primary/10 px-2 py-1 rounded text-xs font-bold uppercase"
+                                        >Open</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-primary/5 transition-colors">
+                                <td class="px-6 py-5 text-sm font-medium"
+                                    >Prayer &amp; Purification Workshop</td
+                                >
+                                <td
+                                    class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                                    >Sundays</td
+                                >
+                                <td
+                                    class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                                    >11:30 AM - 1:00 PM</td
+                                >
+                                <td
+                                    class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                                    >Ustadh Omar</td
+                                >
+                                <td class="px-6 py-5 text-sm"
+                                    ><span
+                                        class="text-primary bg-primary/10 px-2 py-1 rounded text-xs font-bold uppercase"
+                                        >Open</span
+                                    ></td
+                                >
+                            </tr>
+                            <tr class="hover:bg-primary/5 transition-colors">
+                                <td class="px-6 py-5 text-sm font-medium"
+                                    >Quranic Arabic for Beginners</td
+                                >
+                                <td
+                                    class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                                    >Tuesdays</td
+                                >
+                                <td
+                                    class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                                    >6:30 PM - 8:00 PM</td
+                                >
+                                <td
+                                    class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                                    >Sister Sarah</td
+                                >
+                                <td class="px-6 py-5 text-sm"
+                                    ><span
+                                        class="text-amber-500 bg-amber-500/10 px-2 py-1 rounded text-xs font-bold uppercase"
+                                        >Waitlist</span
+                                    ></td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- Mentorship Overview -->
+            <section class="mb-16">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div
+                        class="relative aspect-square rounded-xl overflow-hidden shadow-xl"
+                        data-alt="A mentor and mentee discussing and drinking tea"
+                    >
+                        <img
+                            alt="Mentorship Support"
+                            class="object-cover w-full h-full"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4b7acMsTtUbOiTgKb5YqCjr_7ntS3y1fpDP5tc5RWY5-N3-AbxGGdaWL9M3R5b5X-cCYgJjqC2LHeoskoGBwHa0wvbtMNcIX4eazrYFhq2Mc4FdtYKu9ApiNK9rzQ_tV49RPEBhEoI1oMk3lEShW0kA_kNDRROqbzBg71r8sQ9EfMzHqUZFzdUv-2vWYuaktPnCFxABBfaaUHzl-kgVlw6H73frD3e4QeasnBwuz_9CbryxxloDqXgq8ld1VETliGD3V9ll2EJb5y"
+                        />
+                        <div
+                            class="absolute inset-0 bg-primary/10 mix-blend-multiply"
+                        >
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-6">
+                        <h2 class="text-3xl font-bold font-display">
+                            One-on-One Mentorship
+                        </h2>
+                        <p
+                            class="text-slate-600 dark:text-slate-400 leading-relaxed"
+                        >
+                            We understand that transitioning to a new way of
+                            life can be overwhelming. Our mentorship program
+                            pairs you with experienced community members who
+                            provide personal guidance, answer your questions,
+                            and introduce you to the community.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span
+                                    >Personalized spiritual and practical
+                                    guidance</span
+                                >
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    >Regular coffee meetups and social
+                                    integration</span
+                                >
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    >A safe space to ask any question without
+                                    judgment</span
+                                >
+                            </li>
+                        </ul>
+                        <button
+                            class="w-fit px-8 py-3 bg-primary text-background-dark rounded-lg font-bold shadow-sm hover:opacity-90"
+                            >Apply for a Mentor</button
+                        >
+                    </div>
+                </div>
+            </section>
+            <!-- Resource Library -->
+            <section class="mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold font-display mb-8">
+                    Resource Library
+                </h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Book -->
+                    <div
+                        class="group bg-white dark:bg-slate-900 border border-primary/5 p-4 rounded-xl hover:shadow-md transition-shadow"
+                    >
+                        <div
+                            class="h-64 rounded-lg bg-slate-100 dark:bg-slate-800 mb-4 overflow-hidden relative"
+                            data-alt="Cover of a book about Islamic foundations"
+                        >
+                            <img
+                                alt="The Clear Quran"
+                                class="object-cover w-full h-full group-hover:scale-105 transition-transform"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1YFAyEhMvJG7Ao2E5Motv8jeck58yWCNEkfpqLMgB5A3xn0wnpRBFTHhft2RZmVZZsER3hChcAw-U6yC6__p5rIDGggKQtzuWtNhlMgugXECiusnEmqdh5WFFdv5nrHR1MZ6fz9iffMSWx7eZEB72BUkRoWl9hJ1TUCCB9uXQJHTZ70SJTNueN4WwXXeHerfaV8YoUdzLZF7RKZ8ibWj20EKQESexEupUZ-FChQ9ZNTkmDb_-NleKib4Ay3mGE8GxyMEK3R3FqIJV"
+                            />
+                        </div>
+                        <h3 class="font-bold text-sm mb-1">The Clear Quran</h3>
+                        <p
+                            class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-medium uppercase tracking-wider"
+                        >
+                            Book • Dr. Mustafa Khattab
+                        </p>
+                        <button
+                            class="w-full text-center py-2 text-primary font-bold text-xs border border-primary rounded hover:bg-primary/5"
+                            >Borrow / Download</button
+                        >
+                    </div>
+                    <!-- Video -->
+                    <div
+                        class="group bg-white dark:bg-slate-900 border border-primary/5 p-4 rounded-xl hover:shadow-md transition-shadow"
+                    >
+                        <div
+                            class="h-64 rounded-lg bg-slate-100 dark:bg-slate-800 mb-4 overflow-hidden relative"
+                            data-alt="Still frame from an Islamic education video"
+                        >
+                            <img
+                                alt="Video series thumbnail"
+                                class="object-cover w-full h-full opacity-60"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYJyWJQVqQlfWV6Ks2-vreNmHyHZPQiR3LF4bb4jqccfFXZZTEyhgwjkEuB3xDGuU6OSlv7K-HWTG7GAwhLDSqj7Bd8Y87thtrqRiwh7oseHrMwmTvl2XD7LjabR4g2XrDW2l5RecdfXG6cGAiM8h5Dz10kC_tI8Xqy5W_TM1FpL82IoX2jrcK38ulA89hu0NA2RodomwAP8ImlzRgFXQnjRd9MBjVM8rVer1FR4qmrY9IV-c3jjXf87ViyKynvKyS2ag8Bkp2wjCF"
+                            />
+                        </div>
+                        <h3 class="font-bold text-sm mb-1">
+                            The 5 Pillars Explained
+                        </h3>
+                        <p
+                            class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-medium uppercase tracking-wider"
+                        >
+                            Video Series • 15 Lessons
+                        </p>
+                        <button
+                            class="w-full text-center py-2 text-primary font-bold text-xs border border-primary rounded hover:bg-primary/5"
+                            >Watch Now</button
+                        >
+                    </div>
+                    <!-- PDF -->
+                    <div
+                        class="group bg-white dark:bg-slate-900 border border-primary/5 p-4 rounded-xl hover:shadow-md transition-shadow"
+                    >
+                        <div
+                            class="h-64 rounded-lg bg-primary/5 mb-4 overflow-hidden relative"
+                        >
+                            <img
+                                alt="Video series thumbnail"
+                                class="object-cover w-full h-full opacity-60"
+                                src="https://m.media-amazon.com/images/I/91-3WivnWtL._AC_UF1000,1000_QL80_.jpg"
+                                alt="New Muslim Handbook cover"
+                                srcset=""
+                            />
+                        </div>
+                        <h3 class="font-bold text-sm mb-1">
+                            New Muslim Handbook
+                        </h3>
+                        <p
+                            class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-medium uppercase tracking-wider"
+                        >
+                            Guide • Al-Noor Edition
+                        </p>
+                        <button
+                            class="w-full text-center py-2 text-primary font-bold text-xs border border-primary rounded hover:bg-primary/5"
+                            >Download PDF</button
+                        >
+                    </div>
+                    <!-- Video -->
+                    <div
+                        class="group bg-white dark:bg-slate-900 border border-primary/5 p-4 rounded-xl hover:shadow-md transition-shadow"
+                    >
+                        <div
+                            class="h-64 rounded-lg bg-slate-100 dark:bg-slate-800 mb-4 overflow-hidden relative"
+                            data-alt="Video thumbnail showing a prayer tutorial"
+                        >
+                            <img
+                                alt="Prayer tutorial thumbnail"
+                                class="object-cover w-full h-full opacity-60"
+                                src="https://iant-ci-cd.fuad-a8b.workers.dev/api/media/file?key=1776052881894-Screenshot_2026-04-12_at_11.01.07_PM.jpg"
+                            />
+                        </div>
+                        <h3 class="font-bold text-sm mb-1">
+                            Step-by-Step Prayer
+                        </h3>
+                        <p
+                            class="text-xs text-slate-500 dark:text-slate-400 mb-3 font-medium uppercase tracking-wider"
+                        >
+                            PDF Guide • Illustrated Steps
+                        </p>
+                        <button
+                            class="w-full text-center py-2 text-primary font-bold text-xs border border-primary rounded hover:bg-primary/5"
+                        >
+                            <a
+                                href="https://salamcenter.org/wp-content/uploads/2020/09/Prayer-Guide.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View PDF
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <Footer />
+</Layout>

@@ -1,0 +1,257 @@
+---
+const taraweehStartDate = new Date("2024-03-10T00:00:00");
+const imamRotation = [
+    "Sh. Al-Amin",
+    "Imam Mansour",
+    "Sh. Al-Fahad",
+    "Imam Zaid",
+];
+
+const toShortDate = (date: Date) => {
+    return date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "2-digit",
+    });
+};
+
+const taraweehRows = Array.from({ length: 30 }, (_, index) => {
+    const date = new Date(taraweehStartDate);
+    date.setDate(taraweehStartDate.getDate() + index);
+    const dateKey = date.toISOString().split("T")[0];
+
+    const orderedImams = imamRotation.map(
+        (_, imamIndex) =>
+            imamRotation[(index + imamIndex) % imamRotation.length],
+    );
+
+    return {
+        night: String(index + 1).padStart(2, "0"),
+        day: index + 1,
+        dateKey,
+        date: toShortDate(date),
+        imam1: orderedImams[0],
+        imam2: orderedImams[1],
+        imam3: orderedImams[2],
+        imam4: orderedImams[3],
+    };
+});
+---
+
+<div class="flex flex-col gap-8 mb-16">
+    <!-- Taraweeh Detailed Table Section -->
+    <div class="bg-surface-container-low p-8 rounded-xl" id="taraweeh-schedule">
+        <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 border-b border-primary/20 pb-4"
+        >
+            <div class="flex items-center gap-4">
+                <div class="p-3 bg-primary/10 rounded-xl">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="2em"
+                        height="2em"
+                        viewBox="0 0 48 48"
+                        ><path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M35.46 20.175v1.334m-1.713-1.334v1.334m-1.713-1.334v1.334m-1.714-1.334v1.334m-1.711-1.334v1.334m-1.714-1.334v1.334m-1.713-1.334v1.334m5.068-11.224c-1.093.913-1.615 1.681-3.406 2.73c-4.377 2.565-3.362 5.582-3.345 8.494m13.556 0c.017-2.912 1.032-5.93-3.346-8.495c-1.79-1.048-2.313-1.816-3.46-2.729V8.732m1.63-1.94A1.593 1.593 0 1 1 30.285 5.2h.002m2.783-3.726l.658 1.333l1.47.214l-1.063 1.038l.251 1.465l-1.316-.692l-1.316.692l.252-1.465l-1.064-1.038l1.47-.214zm-9.467 29.199v-7.386h13.443v9.68m-9.326 1.167v-3.516a2.434 2.434 0 0 1 2.44-2.44h.299a2.435 2.435 0 0 1 2.44 2.44v3.588M45.5 23.608a15.84 15.84 0 0 1-15.016 10.797m-7.107-1.68c-5.179-2.605-8.734-7.968-8.734-14.161A15.84 15.84 0 0 1 28.138 2.898M45.476 23.6q.004.204.004.409h0c0 11.868-9.62 21.49-21.489 21.49c-11.868 0-21.49-9.62-21.491-21.49h0c0-11.868 9.622-21.489 21.491-21.488h0c1.393 0 2.783.135 4.15.404"
+                            stroke-width="1"></path></svg
+                    >
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold">
+                        Taraweeh Prayers Schedule
+                    </h3>
+                    <p class="text-slate-500 text-sm">
+                        Detailed Imam assignment and Rakat breakdown for all
+                        nights
+                    </p>
+                </div>
+            </div>
+            <button class="text-primary flex items-center gap-2 font-semibold">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.5em"
+                    height="1.5em"
+                    viewBox="0 0 16 16"
+                    ><path
+                        fill="currentColor"
+                        d="M2.5 10a1.5 1.5 0 0 1 0 3H2v1.5a.5.5 0 0 1-1 0v-4a.5.5 0 0 1 .5-.5zM2 12h.5a.5.5 0 0 0 0-1H2zm4-2a1.5 1.5 0 0 1 1.5 1.5v2A1.5 1.5 0 0 1 6 15H5a.5.5 0 0 1-.5-.5v-4A.5.5 0 0 1 5 10zm-.5 4H6a.5.5 0 0 0 .5-.5v-2A.5.5 0 0 0 6 11h-.5zm5.5-4a.5.5 0 0 1 0 1H9.5v1h1a.5.5 0 0 1 0 1h-1v1.5a.5.5 0 0 1-1 0v-4A.5.5 0 0 1 9 10zM9 4.5A1.5 1.5 0 0 0 10.5 6H14v7.5a1.5 1.5 0 0 1-1.5 1.5h-2.087q.085-.236.087-.5V14a1.5 1.5 0 0 0 1.306-2.236A1.497 1.497 0 0 0 11 9H9c-.534 0-1.003.28-1.269.7A2.5 2.5 0 0 0 6 9H5c-.385 0-.735.146-1 .385V2.5A1.5 1.5 0 0 1 5.5 1H9zm4.75.5H10.5a.5.5 0 0 1-.5-.5V1.25z"
+                    ></path></svg
+                >
+                Download Full PDF
+            </button>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-6" data-range-controls>
+            <button
+                class="px-4 py-2 rounded-full text-sm font-semibold transition-colors bg-primary text-on-primary"
+                data-range-button
+                data-range="1"
+                type="button"
+            >
+                1st 10 Nights
+            </button>
+            <button
+                class="px-4 py-2 rounded-full text-sm font-semibold transition-colors border border-primary/20 text-primary hover:bg-primary/5"
+                data-range-button
+                data-range="2"
+                type="button"
+            >
+                2nd 10 Nights
+            </button>
+            <button
+                class="px-4 py-2 rounded-full text-sm font-semibold transition-colors border border-primary/20 text-primary hover:bg-primary/5"
+                data-range-button
+                data-range="3"
+                type="button"
+            >
+                3rd 10 Nights
+            </button>
+        </div>
+        <div
+            class="overflow-x-auto rounded-xl border border-primary/10 bg-white dark:bg-background-dark shadow-sm"
+        >
+            <table class="w-full text-left border-collapse min-w-250">
+                <thead>
+                    <tr class="bg-primary/5">
+                        <th class="px-6 py-4 font-bold text-primary">Night</th>
+                        <th class="px-6 py-4 font-bold text-primary">Date</th>
+                        <th class="px-6 py-4 font-bold text-primary">Imam 1</th>
+                        <th class="px-4 py-4 text-center font-bold text-primary"
+                            >Rakat</th
+                        >
+                        <th class="px-6 py-4 font-bold text-primary">Imam 2</th>
+                        <th class="px-4 py-4 text-center font-bold text-primary"
+                            >Rakat</th
+                        >
+                        <th class="px-6 py-4 font-bold text-primary">Imam 3</th>
+                        <th class="px-4 py-4 text-center font-bold text-primary"
+                            >Rakat</th
+                        >
+                        <th class="px-6 py-4 font-bold text-primary">Imam 4</th>
+                        <th class="px-4 py-4 text-center font-bold text-primary"
+                            >Rakat</th
+                        >
+                    </tr>
+                </thead>
+                <tbody class="text-sm divide-y divide-primary/5">
+                    {
+                        taraweehRows.map((row, index) => (
+                            <tr
+                                class={`hover:bg-primary/5 transition-colors ${
+                                    index >= 10 ? "hidden" : ""
+                                }`}
+                                data-day={row.day}
+                                data-date={row.dateKey}
+                            >
+                                <td class="px-6 py-4 font-medium">
+                                    {row.night}
+                                </td>
+                                <td class="px-6 py-4 font-semibold text-slate-600">
+                                    {row.date}
+                                </td>
+                                <td class="px-6 py-4 font-semibold">
+                                    {row.imam1}
+                                </td>
+                                <td class="px-4 py-4 text-center font-medium">
+                                    8
+                                </td>
+                                <td class="px-6 py-4 font-semibold">
+                                    {row.imam2}
+                                </td>
+                                <td class="px-4 py-4 text-center font-medium">
+                                    4
+                                </td>
+                                <td class="px-6 py-4 font-semibold">
+                                    {row.imam3}
+                                </td>
+                                <td class="px-4 py-4 text-center font-medium">
+                                    4
+                                </td>
+                                <td class="px-6 py-4 font-semibold">
+                                    {row.imam4}
+                                </td>
+                                <td class="px-4 py-4 text-center font-medium">
+                                    4 + Witr
+                                </td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div
+            class="mt-6 p-4 bg-primary/5 border border-primary/10 rounded-xl flex gap-4 items-start"
+        >
+            <span class="material-symbols-outlined text-primary text-sm mt-0.5"
+                >info</span
+            >
+            <p class="text-xs text-slate-600 leading-normal">
+                The above schedule follows the Main Prayer Hall (20 Rak'ahs).
+                Tahajjud prayers commence at 02:00 AM during the last 10 nights
+                of Ramadan.
+            </p>
+        </div>
+    </div>
+
+    <script is:inline>
+        (() => {
+            const root = document.getElementById("taraweeh-schedule");
+            if (!root) return;
+
+            const buttons = Array.from(
+                root.querySelectorAll("[data-range-button]"),
+            );
+            const rows = Array.from(
+                root.querySelectorAll("tbody tr[data-day]"),
+            );
+
+            const setRange = (range) => {
+                const startDay = (Number(range) - 1) * 10 + 1;
+                const endDay = startDay + 9;
+
+                rows.forEach((row) => {
+                    const day = Number(row.getAttribute("data-day"));
+                    const inRange = day >= startDay && day <= endDay;
+                    row.classList.toggle("hidden", !inRange);
+                });
+
+                buttons.forEach((button) => {
+                    const isActive =
+                        button.getAttribute("data-range") === String(range);
+                    button.classList.toggle("bg-primary", isActive);
+                    button.classList.toggle("text-on-primary", isActive);
+                    button.classList.toggle("border", !isActive);
+                    button.classList.toggle("border-primary/20", !isActive);
+                    button.classList.toggle("text-primary", !isActive);
+                    button.classList.toggle("hover:bg-primary/5", !isActive);
+                });
+            };
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const todayKey = today.toISOString().split("T")[0];
+            const todayRow = rows.find(
+                (row) => row.getAttribute("data-date") === todayKey,
+            );
+            const defaultRange = todayRow
+                ? String(
+                      Math.ceil(Number(todayRow.getAttribute("data-day")) / 10),
+                  )
+                : "1";
+
+            buttons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    setRange(button.getAttribute("data-range") || "1");
+                });
+            });
+
+            setRange(defaultRange);
+
+            if (todayRow) {
+                todayRow.classList.add("bg-primary/5");
+            }
+        })();
+    </script>
+</div>

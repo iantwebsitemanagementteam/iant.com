@@ -1,4 +1,4 @@
-IANT Astro Site - Full LLM Context
+IANT Site - Full LLM Context
 
 Site Name
 Islamic Association of North Texas (IANT)
@@ -10,6 +10,9 @@ Tech Stack
 
 Entry Route
 - / (home page)
+- /services (services page)
+- /ramadan (Ramadan page)
+- /donate (redirects to https://donation.masjidal.com/IANT)
 
 Page Composition
 - src/pages/index.astro uses src/layouts/Layout.astro

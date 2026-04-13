@@ -1,0 +1,376 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <Nav />
+
+    <main class="max-w-7xl mx-auto px-2 py-8 space-y-16">
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 px-8 lg:px-16 overflow-hidden">
+            <div
+                class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16"
+            >
+                <div class="flex-1 space-y-6">
+                    <span
+                        class="text-xs font-black uppercase tracking-widest text-primary"
+                        >ESTABLISHED 1969</span
+                    >
+                    <h2
+                        class="text-6xl lg:text-[4.5rem] font-black leading-[1.1] text-tertiary tracking-tight"
+                    >
+                        A Sanctuary for <span class="text-primary"
+                            >Spirit &amp; Community.</span
+                        >
+                    </h2>
+                    <p
+                        class="text-body-lg text-secondary leading-relaxed max-w-xl"
+                    >
+                        Established in 1969, the Islamic Association of North
+                        Texas (IANT) is the largest masjid, or mosque, in the
+                        DFW area. We serve thousands of congregants daily by
+                        providing a variety of services: all five prayers,
+                        Jumuah, medical clinic, youth programs, continuing
+                        education, a fully accredited K-12 school, funeral
+                        services, financial aid, Eid, Da'wah/outreach, and more.
+                        We are a 501c(3) non-profit organization, and hold close
+                        ties to many intrafaith and government organizations.
+                    </p>
+                </div>
+                <div class="flex-1 relative">
+                    <div
+                        class="absolute -inset-4 bg-primary/10 rounded-xl blur-3xl"
+                    >
+                    </div>
+                    <img
+                        class="relative rounded-xl w-full h-125 object-cover shadow-2xl"
+                        data-alt="Stunning modern mosque architecture with white marble arches and intricate geometric patterns under a soft blue twilight sky"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7zrH1T2Bkgs6AZe5j--geFtg_9HHl9HEwmIGgJWEhQMWJjmiERXjM4ZUIsEb9aM22k1ylzcOW5q5mbeDXgLfoQI7sb49ii2fu4WVDlK7ilMMbgYdVpu34eGyCBekUSE8JtGLQ265VB1sflF-E1xJHdHH33AxJuXQ2fHC6qTFomuzkh7JYH0EIBSF8VO6l7bnQGGRNrgpvMoMNzrL7p5hGg608h7Q5ixd1RCREmBX6idcKa_kcyEj_3PsA45k4b5wHFFunXHXWTROi"
+                    />
+                </div>
+            </div>
+        </section>
+        <!-- Our Story (Bento Layout) -->
+        <section class="py-24 px-8 lg:px-16 bg-surface-container-lowest">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center gap-4 mb-16">
+                    <div class="h-1 w-12 bg-primary"></div>
+                    <h3
+                        class="text-3xl font-black text-tertiary tracking-tight"
+                    >
+                        Our Story
+                    </h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <!-- Historical Context -->
+                    <div
+                        class="md:col-span-7 bg-surface-container-low p-10 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors group"
+                    >
+                        <div class="space-y-6">
+                            <h4 class="text-2xl font-bold text-tertiary">
+                                The Foundation
+                            </h4>
+                            <p class="text-secondary leading-relaxed">
+                                Founded in the heart of the city, IANT began as
+                                a small gathering of families seeking a space
+                                for shared devotion. Over three decades, we have
+                                evolved into a landmark institution, fostering
+                                dialogue and understanding across all faiths.
+                            </p>
+                        </div>
+                        <div class="mt-8 flex gap-4">
+                            <div
+                                class="px-6 py-4 bg-white rounded-lg shadow-sm"
+                            >
+                                <span
+                                    class="block text-2xl font-black text-primary"
+                                    >30+</span
+                                >
+                                <span
+                                    class="text-xs font-bold uppercase text-stone-500"
+                                    >Years of Service</span
+                                >
+                            </div>
+                            <div
+                                class="px-6 py-4 bg-white rounded-lg shadow-sm"
+                            >
+                                <span
+                                    class="block text-2xl font-black text-primary"
+                                    >5k+</span
+                                >
+                                <span
+                                    class="text-xs font-bold uppercase text-stone-500"
+                                    >Community Members</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Visual Accent Card -->
+                    <div
+                        class="md:col-span-5 relative overflow-hidden rounded-xl h-64 md:h-auto"
+                    >
+                        <img
+                            class="absolute inset-0 w-full h-full object-cover"
+                            data-alt="Vintage black and white photograph of a small community mosque gathering, transitioning into a modern vibrant prayer hall"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4FSJkh8_ZsvSy3XnK13SXjcFtS5coaHt_7xwNjjiBVJnxgMOr4E112I0gIQ3EXGHNhaSYJxpeZ-4WeYVEtbtln1h7M71j7sresldF3OK0is6nbLOlfd2Csif0OLpwC-E67kfVohAztZe_7kTr5RCmtn_mQKN_UZEXKc8caBwkNZVq-kL-WqlnWp__c3k-gVrBOjOIysF_Kyz5fb1xesMRsa2oKgR-n24sXDdaSTs9Dcow4AX-TyEYumuXrep3Q93LH2WZ643wKd7w"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-tertiary/80 to-transparent flex items-end p-8"
+                        >
+                            <span class="text-white font-bold text-lg"
+                                >Rooted in Heritage. Built for the Future.</span
+                            >
+                        </div>
+                    </div>
+                    <!-- Philosophy Card -->
+                    <div
+                        class="md:col-span-12 lg:col-span-4 bg-primary p-10 rounded-xl text-on-primary"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="1.5em"
+                            height="1.5em"
+                            viewBox="0 0 24 24"
+                            ><path
+                                fill="#000"
+                                d="M10.588 21.413Q10 20.825 10 20h4q0 .825-.587 1.413T12 22t-1.412-.587M8 19v-2h8v2zm.25-3q-1.725-1.025-2.738-2.75T4.5 9.5q0-3.125 2.188-5.312T12 2t5.313 2.188T19.5 9.5q0 2.025-1.012 3.75T15.75 16zm.6-2h6.3q1.125-.8 1.738-1.975T17.5 9.5q0-2.3-1.6-3.9T12 4T8.1 5.6T6.5 9.5q0 1.35.613 2.525T8.85 14M12 14"
+                                stroke-width="0.5"
+                                stroke="#2d9d56"></path></svg
+                        >
+                        <h4 class="text-2xl font-black mb-4 tracking-tight">
+                            Modern Digital Sanctuary
+                        </h4>
+                        <p class="font-medium opacity-90 leading-relaxed">
+                            We embrace technology to enhance the spiritual
+                            experience—from live-streamed khutbahs to our
+                            seamless community portal.
+                        </p>
+                    </div>
+                    <div
+                        class="md:col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8"
+                    >
+                        <div class="bg-surface-container p-8 rounded-xl">
+                            <h5 class="font-bold text-lg mb-2">Preservation</h5>
+                            <p class="text-sm text-secondary">
+                                Maintaining the sacred traditions and
+                                architectural integrity of our sanctuary.
+                            </p>
+                        </div>
+                        <div class="bg-surface-container p-8 rounded-xl">
+                            <h5 class="font-bold text-lg mb-2">Innovation</h5>
+                            <p class="text-sm text-secondary">
+                                Implementing eco-friendly and smart-building
+                                technologies within our campus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Mission & Vision (Asymmetric) -->
+        <section class="py-24 px-8 lg:px-16 overflow-hidden">
+            <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-20">
+                <div class="flex-1 space-y-12">
+                    <div class="group">
+                        <div class="flex items-center gap-3 mb-6">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1.5em"
+                                height="1.5em"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    fill="#2d9d56"
+                                    d="M3 3h9.382a1 1 0 0 1 .894.553L14 5h6a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-6.382a1 1 0 0 1-.894-.553L12 16H5v6H3z"
+                                ></path></svg
+                            >
+                            <span
+                                class="text-xs font-black uppercase tracking-widest text-stone-400"
+                                >Our Mission</span
+                            >
+                        </div>
+                        <h3
+                            class="text-4xl font-black text-tertiary mb-6 tracking-tighter"
+                        >
+                            To nurture a vibrant, spiritually grounded
+                            community.
+                        </h3>
+                        <p class="text-body-lg text-secondary leading-relaxed">
+                            Our mission is to provide a holistic environment for
+                            spiritual growth, lifelong learning, and social
+                            service, empowering individuals to contribute
+                            positively to society.
+                        </p>
+                    </div>
+                    <div class="group">
+                        <div class="flex items-center gap-3 mb-6">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1.5em"
+                                height="1.5em"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    fill="#2d9d56"
+                                    d="M15.188 14.688Q16.5 13.375 16.5 11.5t-1.312-3.187T12 7T8.813 8.313T7.5 11.5t1.313 3.188T12 16t3.188-1.312m-5.1-1.276Q9.3 12.625 9.3 11.5t.788-1.912T12 8.8t1.913.788t.787 1.912t-.787 1.913T12 14.2t-1.912-.787m-4.738 3.55Q2.35 14.925 1 11.5q1.35-3.425 4.35-5.462T12 4t6.65 2.038T23 11.5q-1.35 3.425-4.35 5.463T12 19t-6.65-2.037"
+                                ></path></svg
+                            >
+                            <span
+                                class="text-xs font-black uppercase tracking-widest text-stone-400"
+                                >Our Vision</span
+                            >
+                        </div>
+                        <h3
+                            class="text-4xl font-black text-tertiary mb-6 tracking-tighter"
+                        >
+                            Leading the digital evolution of the modern mosque.
+                        </h3>
+                        <p class="text-body-lg text-secondary leading-relaxed">
+                            We envision IANT as a global benchmark for the
+                            21st-century mosque, where faith is accessible,
+                            community is borderless, and charity is effortless.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex-1 relative">
+                    <div class="sticky top-32">
+                        <div
+                            class="aspect-4/5 rounded-xl overflow-hidden shadow-2xl"
+                        >
+                            <img
+                                class="w-full h-full object-cover"
+                                data-alt="Diverse group of young and elderly people engaged in a community workshop inside a sunlit, modern hall with minimalist wooden decor"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwha0qCHSQjTifZpXZGt75ao9a6OUJXfS3_D_QhaxSQeAHdi9vuF0qgCfvoOu_5XgDO684EEUp6b3OBmKelDU1AFEvcKTCE3q470wT5RJ9ylBHV241Pfk5-mr9x_cJ76_6PwPA2UOkCNeaAbH-k4LjjCpGP5OS3b4fFGMKcp-NoJ8pCVD8WlzqeAVuHMN_0OFd_mWI7vAYvtxIQD_KiClhmKCVA4Gk8xnB8RSKEcQPJjKLnQHGvXMMzKaVvFdo-xFn8W30iSEDTk9o"
+                            />
+                        </div>
+                        <!-- Floating Glass Card -->
+                        <div
+                            class="absolute -bottom-10 -left-10 p-8 bg-white/70 backdrop-blur-xl rounded-xl shadow-2xl border border-white/20 hidden md:block max-w-xs"
+                        >
+                            <p class="italic text-tertiary font-medium">
+                                "At IANT, we don't just build walls; we build
+                                bridges of light for the next generation."
+                            </p>
+                            <p
+                                class="mt-4 text-xs font-black uppercase text-primary"
+                            >
+                                — Imam Ahmed Al-Zayed
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Core Values -->
+        <section
+            class="py-24 px-8 lg:px-16 bg-tertiary text-white relative overflow-hidden bg-background-dark"
+        >
+            <!-- Background Aura -->
+            <div
+                class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"
+            >
+            </div>
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-20 space-y-4">
+                    <span
+                        class="text-xs font-black uppercase tracking-[0.3em] text-primary"
+                        >Foundational Pillars</span
+                    >
+                    <h3 class="text-5xl font-black tracking-tight">
+                        Our Core Values
+                    </h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Value 1 -->
+                    <div class="space-y-6 text-center group">
+                        <div
+                            class="w-20 h-20 mx-auto bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-primary group-hover:border-primary transition-all duration-500"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1.2em"
+                                height="1.2em"
+                                viewBox="0 0 48 48"
+                                ><path
+                                    fill="none"
+                                    stroke="#2d9d56"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M35.46 20.175v1.334m-1.713-1.334v1.334m-1.713-1.334v1.334m-1.714-1.334v1.334m-1.711-1.334v1.334m-1.714-1.334v1.334m-1.713-1.334v1.334m5.068-11.224c-1.093.913-1.615 1.681-3.406 2.73c-4.377 2.565-3.362 5.582-3.345 8.494m13.556 0c.017-2.912 1.032-5.93-3.346-8.495c-1.79-1.048-2.313-1.816-3.46-2.729V8.732m1.63-1.94A1.593 1.593 0 1 1 30.285 5.2h.002m2.783-3.726l.658 1.333l1.47.214l-1.063 1.038l.251 1.465l-1.316-.692l-1.316.692l.252-1.465l-1.064-1.038l1.47-.214zm-9.467 29.199v-7.386h13.443v9.68m-9.326 1.167v-3.516a2.434 2.434 0 0 1 2.44-2.44h.299a2.435 2.435 0 0 1 2.44 2.44v3.588M45.5 23.608a15.84 15.84 0 0 1-15.016 10.797m-7.107-1.68c-5.179-2.605-8.734-7.968-8.734-14.161A15.84 15.84 0 0 1 28.138 2.898M45.476 23.6q.004.204.004.409h0c0 11.868-9.62 21.49-21.489 21.49c-11.868 0-21.49-9.62-21.491-21.49h0c0-11.868 9.622-21.489 21.491-21.488h0c1.393 0 2.783.135 4.15.404"
+                                    stroke-width="2"></path></svg
+                            >
+                        </div>
+                        <h4 class="text-2xl font-bold tracking-tight">
+                            Reverence
+                        </h4>
+                        <p class="text-stone-400 leading-relaxed text-sm">
+                            Approaching every act of worship and service with
+                            deep respect and mindfulness for the Creator.
+                        </p>
+                    </div>
+                    <!-- Value 2 -->
+                    <div class="space-y-6 text-center group">
+                        <div
+                            class="w-20 h-20 mx-auto bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-primary group-hover:border-primary transition-all duration-500"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1.5em"
+                                height="1.5em"
+                                viewBox="0 0 256 256"
+                                ><path
+                                    fill="#2d9d56"
+                                    d="m254.3 107.91l-25.52-51.06a16 16 0 0 0-21.47-7.15l-24.87 12.43l-52.39-13.86a8.14 8.14 0 0 0-4.1 0L73.56 62.13L48.69 49.7a16 16 0 0 0-21.47 7.15L1.7 107.9a16 16 0 0 0 7.15 21.47l27 13.51l55.49 39.63a8.1 8.1 0 0 0 2.71 1.25l64 16a8 8 0 0 0 7.6-2.1l40-40l15.08-15.08l26.42-13.21a16 16 0 0 0 7.15-21.46m-54.89 33.37L165 113.72a8 8 0 0 0-10.68.61C136.51 132.27 116.66 130 104 122l43.24-42h31.81l27.21 54.41Zm-41.87 41.86l-58.12-14.53l-49.2-35.14l28-56L128 64.28l9.8 2.59l-45 43.68l-.08.09a16 16 0 0 0 2.72 24.81c20.56 13.13 45.37 11 64.91-5L188 152.66Zm-25.72 34.8a8 8 0 0 1-7.75 6.06a8 8 0 0 1-1.95-.24l-41.71-10.43a7.9 7.9 0 0 1-2.71-1.25l-26.35-18.82a8 8 0 0 1 9.3-13l25.11 17.94L126 208.24a8 8 0 0 1 5.82 9.7"
+                                ></path></svg
+                            >
+                        </div>
+                        <h4 class="text-2xl font-bold tracking-tight">
+                            Integrity
+                        </h4>
+                        <p class="text-stone-400 leading-relaxed text-sm">
+                            Commitment to transparency and ethical leadership in
+                            every aspect of our sanctuary's operations.
+                        </p>
+                    </div>
+                    <!-- Value 3 -->
+                    <div class="space-y-6 text-center group">
+                        <div
+                            class="w-20 h-20 mx-auto bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-primary group-hover:border-primary transition-all duration-500"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1.5em"
+                                height="1.5em"
+                                viewBox="0 0 24 24"
+                                ><circle cx="4" cy="14" r="2" fill="#2d9d56"
+                                ></circle><path
+                                    fill="#2d9d56"
+                                    d="M1.22 17.58A2.01 2.01 0 0 0 0 19.43V21h4.5v-1.61c0-.83.23-1.61.63-2.29c-.37-.06-.74-.1-1.13-.1c-.99 0-1.93.21-2.78.58"
+                                ></path><circle
+                                    cx="20"
+                                    cy="14"
+                                    r="2"
+                                    fill="#2d9d56"></circle><path
+                                    fill="#2d9d56"
+                                    d="M22.78 17.58A6.95 6.95 0 0 0 20 17c-.39 0-.76.04-1.13.1c.4.68.63 1.46.63 2.29V21H24v-1.57c0-.81-.48-1.53-1.22-1.85m-6.54-.93c-1.17-.52-2.61-.9-4.24-.9s-3.07.39-4.24.9A2.99 2.99 0 0 0 6 19.39V21h12v-1.61c0-1.18-.68-2.26-1.76-2.74M9 12c0 1.66 1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3s-3 1.34-3 3"
+                                ></path><path
+                                    fill="#2d9d56"
+                                    d="M2.48 10.86C2.17 10.1 2 9.36 2 8.6C2 6.02 4.02 4 6.6 4c2.68 0 3.82 1.74 5.4 3.59C13.57 5.76 14.7 4 17.4 4C19.98 4 22 6.02 22 8.6c0 .76-.17 1.5-.48 2.26c.65.31 1.18.82 1.53 1.44c.6-1.2.95-2.42.95-3.7C24 4.9 21.1 2 17.4 2c-2.09 0-4.09.97-5.4 2.51C10.69 2.97 8.69 2 6.6 2C2.9 2 0 4.9 0 8.6c0 1.28.35 2.5.96 3.7c.35-.62.88-1.13 1.52-1.44"
+                                ></path></svg
+                            >
+                        </div>
+                        <h4 class="text-2xl font-bold tracking-tight">
+                            Inclusivity
+                        </h4>
+                        <p class="text-stone-400 leading-relaxed text-sm">
+                            Welcoming all seekers of truth, regardless of
+                            background, ensuring our sanctuary is a home for
+                            everyone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</Layout>

@@ -1,0 +1,371 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <Nav />
+    <main class="max-w-7xl mx-auto px-2 py-8 space-y-16">
+        <section class="mb-20 relative">
+            <div
+                class="absolute -top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"
+            >
+            </div>
+            <label
+                class="text-xs font-bold uppercase tracking-widest text-primary mb-4 block"
+                >The Guardians of IANT</label
+            >
+            <h2
+                class="text-5xl lg:text-7xl font-black text-on-surface tracking-tighter mb-6 leading-none"
+            >
+                Our People
+            </h2>
+            <p class="text-xl text-slate-500 max-w-2xl leading-relaxed">
+                Meet the dedicated individuals who foster spiritual growth,
+                community excellence, and administrative integrity at IANT.
+            </p>
+        </section>
+        <!-- Section: Our Imams (Bento Style Layout) -->
+        <section class="mb-24">
+            <div class="flex items-end justify-between mb-10">
+                <div>
+                    <h3
+                        class="text-3xl font-bold tracking-tight text-on-surface"
+                    >
+                        Our Imams
+                    </h3>
+                    <div class="h-1 w-20 bg-primary mt-2 rounded-full"></div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Featured Imam Card https://iant.com/wp-content/uploads/2023/07/20230715170918_IMG_3930-scaled.jpg -->
+                <div
+                    class="bg-surface-container-lowest rounded-xl p-6 flex flex-col group shadow-sm hover:shadow-xl transition-all duration-500"
+                >
+                    <div
+                        class="w-full aspect-square rounded-xl overflow-hidden mb-6 bg-surface-container shadow-inner"
+                    >
+                        <img
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Professional portrait of a middle-aged man with short beard, wearing a formal suit, neutral studio background, soft key light"
+                            src="https://iant.com/wp-content/uploads/2023/07/20230715170918_IMG_3930-scaled.jpg"
+                        />
+                    </div>
+                    <span
+                        class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full mb-3 self-start"
+                        >Imam, IANT</span
+                    >
+                    <h4 class="text-2xl font-bold text-on-surface mb-2">
+                        Majid Sajjadur Rahman
+                    </h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                        Born and raised in Jeddah, Saudia Arabia, and with
+                        extensive scholarly experience both there and the United
+                        States, Imam Majid is the current Imam at the Islamic
+                        Association of North Texas. Book an appointment <a
+                            class="text-primary font-bold hover:underline"
+                            href="/imams-corner">here</a
+                        >.
+                    </p>
+                </div>
+                <!-- Secondary Imam Card -->
+                <div
+                    class="bg-surface-container-lowest rounded-xl p-6 flex flex-col group shadow-sm hover:shadow-xl transition-all duration-500"
+                >
+                    <div
+                        class="w-full aspect-square rounded-xl overflow-hidden mb-6 bg-surface-container shadow-inner"
+                    >
+                        <img
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Professional portrait of a middle-aged man with short beard, wearing a formal suit, neutral studio background, soft key light"
+                            src="https://iant.com/wp-content/uploads/2025/03/Dr.-Asif-IANT-Portrait-scaled.jpg"
+                        />
+                    </div>
+                    <span
+                        class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full mb-3 self-start"
+                        >Resident Scholar, IANT</span
+                    >
+                    <h4 class="text-2xl font-bold text-on-surface mb-2">
+                        Dr. Asif Hirani
+                    </h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                        Dr. Asif Hirani is a religious scholar and author. He
+                        has completed his early traditional Islamic studies at
+                        the Dr. Israr Ahmed Quran Academy and the University of
+                        Abi Bakr. He completed his Master's in Islamic Studies
+                        (Usul-ud-din) and earned his Ph.D. from Al-Madina
+                        International University in Tafsir and Uloom-ul-Qur'an.
+                        He has studied traditional Tafsir, Hadith, Fiqh with
+                        several scholars in Madina and Pakistan. He has
+                        published books and articles on various topics related
+                        to textual and rational sciences.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Board of Directors (Grid Layout) -->
+        <section class="mb-24">
+            <div class="flex items-end justify-between mb-10">
+                <div>
+                    <h3
+                        class="text-3xl font-bold tracking-tight text-on-surface"
+                    >
+                        Board of Directors
+                    </h3>
+                    <div class="h-1 w-20 bg-primary mt-2 rounded-full"></div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Board Member 1 -->
+                <div class="space-y-4 group">
+                    <div
+                        class="aspect-3/4 rounded-2xl overflow-hidden relative shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Professional woman in business attire with confident posture, urban office background with soft morning sunlight"
+                            src="https://iant.com/wp-content/uploads/2025/12/DSC08162-1-scaled.jpg"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-background-dark via-transparent to-transparent opacity-60"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-4 left-4 right-4 text-white"
+                        >
+                            <p
+                                class="text-[10px] font-bold uppercase tracking-widest opacity-80"
+                            >
+                                President
+                            </p>
+                            <h5 class="text-lg font-bold">Mohammed Elithy</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Board Member 2 -->
+                <div class="space-y-4 group">
+                    <div
+                        class="aspect-3/4 rounded-2xl overflow-hidden relative shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Man in casual professional clothing, warm smile, blurred garden background, golden hour lighting"
+                            src="https://iant.com/wp-content/uploads/2025/12/DSC07628-scaled.jpg"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-background-dark via-transparent to-transparent opacity-60"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-4 left-4 right-4 text-white"
+                        >
+                            <p
+                                class="text-[10px] font-bold uppercase tracking-widest opacity-80"
+                            >
+                                Vice President
+                            </p>
+                            <h5 class="text-lg font-bold">Shayan Gaziani</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Board Member 3 -->
+                <div class="space-y-4 group">
+                    <div
+                        class="aspect-3/4 rounded-2xl overflow-hidden relative shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Portrait of a young woman with a thoughtful expression, wearing spectacles, bright natural window lighting"
+                            src="https://iant.com/wp-content/uploads/2025/12/DSC08145-scaled.jpg"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-background-dark via-transparent to-transparent opacity-60"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-4 left-4 right-4 text-white"
+                        >
+                            <p
+                                class="text-[10px] font-bold uppercase tracking-widest opacity-80"
+                            >
+                                Secretary
+                            </p>
+                            <h5 class="text-lg font-bold">Umair Khan</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Board Member 4 -->
+                <div class="space-y-4 group">
+                    <div
+                        class="aspect-3/4 rounded-2xl overflow-hidden relative shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Senior man with distinguished look, grey hair, outdoor setting with architectural elements in soft focus"
+                            src="https://iant.com/wp-content/uploads/2026/01/CA57CD66-4551-4263-86B7-5584EB75912D.png"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-background-dark via-transparent to-transparent opacity-60"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-4 left-4 right-4 text-white"
+                        >
+                            <p
+                                class="text-[10px] font-bold uppercase tracking-widest opacity-80"
+                            >
+                                Treasurer
+                            </p>
+                            <h5 class="text-lg font-bold">Asif Mahmood</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board Member 5 -->
+                <div class="space-y-4 group">
+                    <div
+                        class="aspect-3/4 rounded-2xl overflow-hidden relative shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Senior man with distinguished look, grey hair, outdoor setting with architectural elements in soft focus"
+                            src="https://iant.com/wp-content/uploads/2026/01/DSC07517-scaled.jpeg"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-background-dark via-transparent to-transparent opacity-60"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-4 left-4 right-4 text-white"
+                        >
+                            <p
+                                class="text-[10px] font-bold uppercase tracking-widest opacity-80"
+                            >
+                                Board Member
+                            </p>
+                            <h5 class="text-lg font-bold">Suzie Ahmed</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board Member 6 https://iant.com/wp-content/uploads/2025/12/DSC07527-scaled.jpg -->
+                <div class="space-y-4 group">
+                    <div
+                        class="aspect-3/4 rounded-2xl overflow-hidden relative shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Senior man with distinguished look, grey hair, outdoor setting with architectural elements in soft focus"
+                            src="https://iant.com/wp-content/uploads/2025/12/DSC07527-scaled.jpg"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-background-dark via-transparent to-transparent opacity-60"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-4 left-4 right-4 text-white"
+                        >
+                            <p
+                                class="text-[10px] font-bold uppercase tracking-widest opacity-80"
+                            >
+                                Board Member
+                            </p>
+                            <h5 class="text-lg font-bold">
+                                Meherrunnessa Poppy
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board Member 7 https://iant.com/wp-content/uploads/2025/12/DSC07527-scaled.jpg -->
+                <div class="space-y-4 group">
+                    <div
+                        class="aspect-3/4 rounded-2xl overflow-hidden relative shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Senior man with distinguished look, grey hair, outdoor setting with architectural elements in soft focus"
+                            src="https://iant.com/wp-content/uploads/2025/12/DSC07652-1-scaled.jpg"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-background-dark via-transparent to-transparent opacity-60"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-4 left-4 right-4 text-white"
+                        >
+                            <p
+                                class="text-[10px] font-bold uppercase tracking-widest opacity-80"
+                            >
+                                Board Member
+                            </p>
+                            <h5 class="text-lg font-bold">
+                                Abdulrahman Alkadri
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board Member 8 https://iant.com/wp-content/uploads/2025/12/DSC07527-scaled.jpg -->
+                <div class="space-y-4 group">
+                    <div
+                        class="aspect-3/4 rounded-2xl overflow-hidden relative shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Senior man with distinguished look, grey hair, outdoor setting with architectural elements in soft focus"
+                            src="https://iant.com/wp-content/uploads/2026/02/IMG_1313-scaled.jpg"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-background-dark via-transparent to-transparent opacity-60"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-4 left-4 right-4 text-white"
+                        >
+                            <p
+                                class="text-[10px] font-bold uppercase tracking-widest opacity-80"
+                            >
+                                Board Member
+                            </p>
+                            <h5 class="text-lg font-bold">
+                                Ibrahim Bility
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board Member 9 https://iant.com/wp-content/uploads/2025/12/DSC07527-scaled.jpg -->
+                <div class="space-y-4 group">
+                    <div
+                        class="aspect-3/4 rounded-2xl overflow-hidden relative shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Senior man with distinguished look, grey hair, outdoor setting with architectural elements in soft focus"
+                            src="https://iant.com/wp-content/uploads/2026/01/IMG_2547-scaled.jpeg"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-background-dark via-transparent to-transparent opacity-60"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-4 left-4 right-4 text-white"
+                        >
+                            <p
+                                class="text-[10px] font-bold uppercase tracking-widest opacity-80"
+                            >
+                                Board Member
+                            </p>
+                            <h5 class="text-lg font-bold">
+                                Omair Siddiqi
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</Layout>

@@ -1,0 +1,190 @@
+---
+const imsakiyahStartDate = new Date("2024-03-11T00:00:00");
+
+const toTimeLabel = (totalMinutes: number) => {
+    const hours24 = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    const period = hours24 >= 12 ? "PM" : "AM";
+    const hours12 = hours24 % 12 || 12;
+
+    return `${hours12.toString().padStart(2, "0")}:${minutes
+        .toString()
+        .padStart(2, "0")} ${period}`;
+};
+
+const toDateLabel = (date: Date) => {
+    return date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
+    });
+};
+
+const imsakiyahRows = Array.from({ length: 30 }, (_, index) => {
+    const date = new Date(imsakiyahStartDate);
+    date.setDate(imsakiyahStartDate.getDate() + index);
+    const dateKey = date.toISOString().split("T")[0];
+
+    return {
+        day: index + 1,
+        dateKey,
+        date: toDateLabel(date),
+        imsak: toTimeLabel(5 * 60 + 12 - index),
+        fajr: toTimeLabel(5 * 60 + 22 - index),
+        iftar: toTimeLabel(18 * 60 + 45 + index),
+    };
+});
+---
+
+<!-- Prayer Imsakiah Table -->
+<section class="space-y-6" id="imsakiah">
+    <div class="flex items-end justify-between border-b border-primary/20 pb-4">
+        <div>
+            <h2 class="text-3xl font-bold">Prayer Imsakiah</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-1">
+                Suhoor and Iftar timings for all 30 days
+            </p>
+        </div>
+        <button class="text-primary flex items-center gap-2 font-semibold">
+            Download Full PDF <span class="material-symbols-outlined">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    ><path
+                        fill="currentColor"
+                        d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z"
+                    ></path></svg
+                >
+            </span>
+        </button>
+    </div>
+    <div class="flex flex-wrap gap-2" data-range-controls>
+        <button
+            class="px-4 py-2 rounded-full text-sm font-semibold transition-colors bg-primary text-on-primary"
+            data-range-button
+            data-range="1"
+            type="button"
+        >
+            1st 10 Nights
+        </button>
+        <button
+            class="px-4 py-2 rounded-full text-sm font-semibold transition-colors border border-primary/20 text-primary hover:bg-primary/5"
+            data-range-button
+            data-range="2"
+            type="button"
+        >
+            2nd 10 Nights
+        </button>
+        <button
+            class="px-4 py-2 rounded-full text-sm font-semibold transition-colors border border-primary/20 text-primary hover:bg-primary/5"
+            data-range-button
+            data-range="3"
+            type="button"
+        >
+            3rd 10 Nights
+        </button>
+    </div>
+    <div
+        class="overflow-x-auto rounded-xl border border-primary/10 bg-white dark:bg-background-dark shadow-sm"
+    >
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-primary/5">
+                    <th class="px-6 py-4 font-bold text-primary">Ramadan</th
+                    >
+                    <th class="px-6 py-4 font-bold text-primary">Date</th>
+                    <th class="px-6 py-4 font-bold text-primary"
+                        >Suhoor (Imsak)</th
+                    >
+                    <th class="px-6 py-4 font-bold text-primary">Fajr</th>
+                    <th class="px-6 py-4 font-bold text-primary"
+                        >Iftar (Maghrib)</th
+                    >
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-primary/5">
+                {
+                    imsakiyahRows.map((row, index) => (
+                        <tr
+                            class={`hover:bg-primary/5 transition-colors ${
+                                index >= 10 ? "hidden" : ""
+                            }`}
+                            data-day={row.day}
+                            data-date={row.dateKey}
+                        >
+                            <td class="px-6 py-4 font-medium">{row.day}</td>
+                            <td class="px-6 py-4">{row.date}</td>
+                            <td class="px-6 py-4 text-slate-500 dark:text-slate-400">
+                                {row.imsak}
+                            </td>
+                            <td class="px-6 py-4 font-semibold">{row.fajr}</td>
+                            <td class="px-6 py-4">
+                                <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full font-bold">
+                                    {row.iftar}
+                                </span>
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script is:inline>
+    (() => {
+        const root = document.getElementById("imsakiah");
+        if (!root) return;
+
+        const buttons = Array.from(
+            root.querySelectorAll("[data-range-button]"),
+        );
+        const rows = Array.from(root.querySelectorAll("tbody tr[data-day]"));
+
+        const setRange = (range) => {
+            const startDay = (Number(range) - 1) * 10 + 1;
+            const endDay = startDay + 9;
+
+            rows.forEach((row) => {
+                const day = Number(row.getAttribute("data-day"));
+                const inRange = day >= startDay && day <= endDay;
+                row.classList.toggle("hidden", !inRange);
+            });
+
+            buttons.forEach((button) => {
+                const isActive =
+                    button.getAttribute("data-range") === String(range);
+                button.classList.toggle("bg-primary", isActive);
+                button.classList.toggle("text-on-primary", isActive);
+                button.classList.toggle("border", !isActive);
+                button.classList.toggle("border-primary/20", !isActive);
+                button.classList.toggle("text-primary", !isActive);
+                button.classList.toggle("hover:bg-primary/5", !isActive);
+            });
+        };
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const todayKey = today.toISOString().split("T")[0];
+        const todayRow = rows.find(
+            (row) => row.getAttribute("data-date") === todayKey,
+        );
+        const defaultRange = todayRow
+            ? String(Math.ceil(Number(todayRow.getAttribute("data-day")) / 10))
+            : "1";
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                setRange(button.getAttribute("data-range") || "1");
+            });
+        });
+
+        setRange(defaultRange);
+
+        if (todayRow) {
+            todayRow.classList.add("bg-primary/5");
+        }
+    })();
+</script>

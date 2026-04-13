@@ -1,0 +1,125 @@
+---
+const qiyamStartDate = new Date("2024-03-30T00:00:00");
+
+const toDateLabel = (date: Date) => {
+    return date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
+    });
+};
+
+const toDateKey = (date: Date) => date.toISOString().split("T")[0];
+
+const toTimeLabel = (totalMinutes: number) => {
+    const hours24 = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    const period = hours24 >= 12 ? "PM" : "AM";
+    const hours12 = hours24 % 12 || 12;
+
+    return `${hours12.toString().padStart(2, "0")}:${minutes
+        .toString()
+        .padStart(2, "0")} ${period}`;
+};
+
+const qiyamRows = Array.from({ length: 10 }, (_, index) => {
+    const date = new Date(qiyamStartDate);
+    date.setDate(qiyamStartDate.getDate() + index);
+
+    return {
+        night: index + 21,
+        date: toDateLabel(date),
+        dateKey: toDateKey(date),
+        qiyamStart: toTimeLabel(2 * 60),
+        qiyamIqamah: toTimeLabel(2 * 60 + 15),
+        witr: toTimeLabel(3 * 60 + 35),
+        reminder: index < 5 ? "Community Suhoor" : "Dua & Reflection",
+    };
+});
+---
+
+<section class="space-y-6" id="last-10-nights">
+    <div class="flex items-end justify-between border-b border-primary/20 pb-4">
+        <div>
+            <h2 class="text-3xl font-bold">Last 10 Nights Qiyam</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-1">
+                Special nightly qiyam schedule for Ramadan nights 21-30
+            </p>
+        </div>
+        <span
+            class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide"
+        >
+            High Virtue Nights
+        </span>
+    </div>
+
+    <div
+        class="overflow-x-auto rounded-xl border border-primary/10 bg-white dark:bg-background-dark shadow-sm"
+    >
+        <table class="w-full text-left border-collapse min-w-250">
+            <thead>
+                <tr class="bg-primary/5">
+                    <th class="px-6 py-4 font-bold text-primary">Night</th>
+                    <th class="px-6 py-4 font-bold text-primary">Date</th>
+                    <th class="px-6 py-4 font-bold text-primary">Qiyam Start</th
+                    >
+                    <th class="px-6 py-4 font-bold text-primary">Iqamah</th>
+                    <th class="px-6 py-4 font-bold text-primary">Witr</th>
+                    <th class="px-6 py-4 font-bold text-primary">After Salah</th
+                    >
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-primary/5">
+                {
+                    qiyamRows.map((row) => (
+                        <tr
+                            class="hover:bg-primary/5 transition-colors"
+                            data-qiyam-date={row.dateKey}
+                        >
+                            <td class="px-6 py-4 font-semibold">{row.night}</td>
+                            <td class="px-6 py-4">{row.date}</td>
+                            <td class="px-6 py-4 font-semibold text-primary">
+                                {row.qiyamStart}
+                            </td>
+                            <td class="px-6 py-4">{row.qiyamIqamah}</td>
+                            <td class="px-6 py-4">{row.witr}</td>
+                            <td class="px-6 py-4">
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full font-bold text-xs">
+                                    {row.reminder}
+                                </span>
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="p-4 bg-primary/5 border border-primary/10 rounded-xl">
+        <p class="text-sm text-slate-600 leading-relaxed">
+            Doors open 20 minutes before qiyam. Please arrive with wudu, keep
+            aisles clear, and use designated family and sisters' sections.
+        </p>
+    </div>
+</section>
+
+<script is:inline>
+    (() => {
+        const rows = Array.from(
+            document.querySelectorAll("#last-10-nights [data-qiyam-date]"),
+        );
+        if (!rows.length) return;
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const todayKey = today.toISOString().split("T")[0];
+
+        const todayRow = rows.find(
+            (row) => row.getAttribute("data-qiyam-date") === todayKey,
+        );
+
+        if (todayRow) {
+            todayRow.classList.add("bg-primary/5");
+        }
+    })();
+</script>

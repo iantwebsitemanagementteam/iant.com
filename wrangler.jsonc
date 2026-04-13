@@ -3,14 +3,20 @@
 	"compatibility_flags": [
 		"global_fetch_strictly_public"
 	],
-	"name": "iant",
+	"name": "iant-ci-cd",
 	"main": "@astrojs/cloudflare/entrypoints/server",
 	"assets": {
 		"directory": "./dist",
 		"binding": "ASSETS"
 	},
 	"observability": {
-		"enabled": true
+		"logs": {
+			"enabled": true,
+			"invocation_logs": true
+		},
+		"traces": {
+			"enabled": true
+		}
 	},
 	"r2_buckets": [
 		{

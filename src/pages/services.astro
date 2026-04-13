@@ -1,0 +1,465 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Circle from "../components/Circle.astro";
+---
+
+<Layout>
+    <Nav />
+    <main class="max-w-7xl mx-auto px-2 py-8 space-y-16">
+        <!-- Hero Section -->
+        <section class="mb-20">
+            <span
+                class="text-xs font-bold text-emerald-500 uppercase tracking-widest mb-4 block"
+                >Our Commitment</span
+            >
+            <h1 class="text-7xl font-black tracking-tighter leading-none mb-8">
+                Sacred Services. <br /><span class="text-slate-400"
+                    >Community Support.</span
+                >
+            </h1>
+            <p class="text-xl text-slate-500 max-w-2xl leading-relaxed">
+                IANT Mosque is more than a place of worship—it's a sanctuary for
+                spiritual growth, social welfare, and communal excellence.
+            </p>
+        </section>
+        <!-- Core Services Section (Bento Grid) -->
+        <section class="mb-24">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-4xl font-black tracking-tight mb-2">
+                        Core Services
+                    </h2>
+                    <div class="h-1 w-20 bg-emerald-500"></div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Daily Prayers -->
+                <div
+                    class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-lowest p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-emerald-500/20"
+                >
+                    <div class="relative z-10">
+                        <div
+                            class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6 text-emerald-600"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1em"
+                                height="1em"
+                                viewBox="0 0 24 24"
+                                ><g fill="none"
+                                    ><path
+                                        d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12"
+                                    ></path><path
+                                        stroke="#2d9d56"
+                                        stroke-linecap="square"
+                                        stroke-width="2"
+                                        d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12Z"
+                                    ></path><path
+                                        stroke="#2d9d56"
+                                        stroke-linecap="square"
+                                        stroke-width="2"
+                                        d="M12 6.5V12l3 3"></path></g
+                                ></svg
+                            >
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">
+                            Five Daily Prayers
+                        </h3>
+                        <p class="text-slate-500 leading-relaxed max-w-md mb-6">
+                            Experience the profound spiritual significance of
+                            congregational worship. Our sanctuary remains open
+                            for Fajr, Dhuhr, Asr, Maghrib, and Isha. Prayer
+                            times can be found on our <a
+                                href="/"
+                                class="text-emerald-500 font-bold underline"
+                                >homepage</a
+                            > and are updated regularly.
+                        </p>
+                        <div class="flex gap-4">
+                            <span
+                                class="px-3 py-1 bg-slate-100 rounded-full text-xs font-bold uppercase tracking-widest text-slate-500"
+                                >Congregational</span
+                            >
+                            <span
+                                class="px-3 py-1 bg-slate-100 rounded-full text-xs font-bold uppercase tracking-widest text-slate-500"
+                                >Spiritual Growth</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="absolute top-0 right-0 w-1/3 h-full opacity-10 group-hover:opacity-20 transition-opacity"
+                    >
+                        <img
+                            class="w-full h-full object-cover"
+                            data-alt="abstract architectural detail of a mosque ceiling with geometric patterns and soft ambient lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRLlc-ZC8WPm6jGzt-WCFntZxES8Qrq5Bc2aFWqappYlcYPDXExqwwYuEhOp0BDw5PwNrJ366I4bOUtbZ1akrpZJxmzIQ5ee9b-KwTmXlsDtxMQOM-t2E5fiqJ4FE3aK6cQgCf5c4IRoMMvfX_pHDlVlWIFrFfsoWYBrxaVF2NIb_qNxvCySpLvubwuTmE270oKCGsWY6yqJhNT-xExi1JZXiGko0lM_ZnOBaDUIgYcLHZlmhP-wHM9m5CgEsidzj4AXCqUSParC8D"
+                        />
+                    </div>
+                </div>
+                <!-- Counseling -->
+                <div
+                    class="md:col-span-4 bg-slate-900 text-white rounded-xl p-8 relative overflow-hidden shadow-lg"
+                >
+                    <div class="relative z-10">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 14 14"
+                            ><path
+                                fill="#2d9d56"
+                                fill-rule="evenodd"
+                                d="M1.5 5.886c0-1.64.45-2.772 1.198-3.497c.751-.728 1.897-1.139 3.474-1.139c2.006 0 3.315.75 4.255 1.861c.968 1.144 1.57 2.701 2.059 4.347c.022.073.02.146.003.201a.16.16 0 0 1-.064.092c-.176.111-.314.157-.811.137a.625.625 0 0 0-.65.624v1.391a.875.875 0 0 1-.875.875h-.463c-.714 0-1.41.494-1.508 1.296l-.005.076v1.225a.625.625 0 1 0 1.25 0V12.2a.2.2 0 0 1 .07-.107a.3.3 0 0 1 .193-.065h.463a2.125 2.125 0 0 0 2.125-2.125v-.782c.308-.037.584-.127.878-.312c.619-.39.763-1.133.592-1.708c-.498-1.673-1.158-3.444-2.303-4.797C10.21.918 8.554 0 6.172 0C4.39 0 2.886.466 1.828 1.492C.767 2.52.25 4.02.25 5.886c0 1.26.162 2.14.443 2.882c.232.612.543 1.117.849 1.613l.165.27c.332.547.483 1.202.48 1.892v.832a.625.625 0 1 0 1.25 0v-.829c.003-.867-.186-1.76-.661-2.544l-.182-.297c-.304-.495-.545-.888-.732-1.38c-.215-.569-.362-1.292-.362-2.439m5.142-3.158a1.04 1.04 0 0 1 .963.657l.129.329l.32.185l.35-.053a1.035 1.035 0 0 1 1.051.507l.187.324c.105.18.152.388.136.596a1 1 0 0 1-.043.21q-.027.08-.054.136c-.025.055-.076.15-.063.124a1 1 0 0 1-.07.11l-.045.058c-.031.04-.07.087-.108.133l-.06.073v.37l.06.073l.176.224a1 1 0 0 1 .047.078c-.014-.027.037.068.063.124q.027.055.054.136c.016.05.036.124.043.21c.016.207-.032.415-.136.595l-.187.324a1.04 1.04 0 0 1-1.052.507l-.349-.053l-.32.186l-.13.328a1.03 1.03 0 0 1-.963.658h-.376a1.04 1.04 0 0 1-.963-.658l-.129-.328l-.32-.186l-.35.053a1.035 1.035 0 0 1-1.051-.507l-.187-.324a1.03 1.03 0 0 1-.136-.595a1 1 0 0 1 .043-.21q.027-.08.054-.136c.025-.056.076-.15.063-.124a1 1 0 0 1 .07-.11l.045-.058l.108-.134l.06-.073v-.37l-.06-.073l-.176-.224a1 1 0 0 1-.047-.077c.014.026-.037-.069-.063-.124a1 1 0 0 1-.054-.137a1 1 0 0 1-.043-.21a1.03 1.03 0 0 1 .136-.595l.187-.324a1.04 1.04 0 0 1 1.052-.507l.349.053l.32-.185l.13-.329a1.035 1.035 0 0 1 .963-.657zm-.189 4.607c.661 0 1.033-.371 1.033-1.033c0-.66-.372-1.032-1.033-1.032S5.42 5.64 5.42 6.302s.372 1.033 1.033 1.033"
+                                clip-rule="evenodd"></path></svg
+                        >
+                        <h3 class="text-xl font-bold mb-3">
+                            Religious Counseling
+                        </h3>
+                        <p class="text-slate-400 text-sm mb-6">
+                            Private, confidential sessions with our Imam for
+                            guidance through life's complexities.
+                        </p>
+                        <button
+                            class="text-emerald-400 font-bold text-sm uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"
+                        >
+                            Book Session <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1em"
+                                height="1em"
+                                viewBox="0 0 512 512"
+                                ><path
+                                    fill="none"
+                                    stroke="#2d9d56"
+                                    stroke-linecap="square"
+                                    stroke-miterlimit="10"
+                                    stroke-width="48"
+                                    d="m268 112l144 144l-144 144m124-144H100"
+                                ></path></svg
+                            >
+                        </button>
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 w-32 h-32 bg-emerald-500/20 blur-3xl rounded-full translate-x-10 translate-y-10"
+                    >
+                    </div>
+                </div>
+                <!-- Janazah -->
+                <div
+                    class="md:col-span-4 bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-transparent hover:border-emerald-500/20 transition-all"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                        ><path
+                            fill="green"
+                            d="m3 22l1.5-1.5L6 22l1.5-1.5L9 22l1.5-1.5L12 22l1.5-1.5L15 22l1.5-1.5L18 22l1.5-1.5L21 22V2l-1.5 1.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2L7.5 3.5L6 2L4.5 3.5L3 2"
+                        ></path></svg
+                    >
+                    <h3 class="text-xl font-bold mb-3">Janazah Services</h3>
+                    <p class="text-slate-500 text-sm mb-4">
+                        Compassionate end-of-life care including washing
+                        (ghusl), shroud (kafan), and funeral prayers.
+                    </p>
+                    <a
+                        class="text-emerald-500 text-sm font-bold underline decoration-2 underline-offset-4"
+                        href="#">Learn More</a
+                    >
+                </div>
+                <!-- Financial Aid -->
+                <div
+                    class="md:col-span-4 bg-emerald-500 text-on-primary rounded-xl p-8 shadow-lg shadow-emerald-500/20"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                        ><g fill="white" fill-rule="evenodd" clip-rule="evenodd"
+                            ><path
+                                d="M14.276 9.2a1.3 1.3 0 0 0-.911-.87a5.2 5.2 0 0 0-1.821 0q-.345.03-.69 0a.5.5 0 0 1-.36-.17c-.251-.39.08-.651.48-.831a3.7 3.7 0 0 1 1.7-.33a.29.29 0 0 0 .36-.19a.27.27 0 0 0-.23-.32a3.4 3.4 0 0 0-1-.07a.2.2 0 0 1 0-.08a1 1 0 0 0 0-.23a.5.5 0 0 0 0-.221c-.05-.19-.14-.34-.2-.52a.32.32 0 0 0-.32-.32a.33.33 0 0 0-.32.33a5 5 0 0 0-.16.57q-.009.12 0 .24q-.017.12 0 .24l.06.13a2.55 2.55 0 0 0-1.001.48a1.19 1.19 0 0 0-.23 1.572a1.38 1.38 0 0 0 1 .7a8 8 0 0 0 1.761 0a2.2 2.2 0 0 1 .64 0a.33.33 0 0 1 .17.55a1.9 1.9 0 0 1-.61.43a3.6 3.6 0 0 1-1.61.31a1.2 1.2 0 0 1-.46-.14a2.3 2.3 0 0 1-.461-.31a.32.32 0 0 0-.45.05a.32.32 0 0 0 0 .44q.304.28.66.491q.266.136.56.19q.27.024.54 0a2 2 0 0 0 0 .23a2 2 0 0 0 0 .23c.06.19.14.34.21.52a.31.31 0 0 0 .321.311a.3.3 0 0 0 .31-.32q.108-.278.17-.57q.015-.127 0-.25a1 1 0 0 0 0-.23c.478-.099.93-.293 1.331-.571a1.31 1.31 0 0 0 .56-1.471"
+                            ></path><path
+                                d="M4.51 8.79a5.28 5.28 0 0 1-.11-5.364a2.43 2.43 0 0 1 2-1.25a4.55 4.55 0 0 1 2.632.58a5.1 5.1 0 0 1 1.491 1.491c.39.45.76.35 1 .15q.16-.185.271-.4c.24-.39.42-1 .65-1.311c.402-.583.95-1.05 1.591-1.35a3.14 3.14 0 0 1 2.001-.231a3.1 3.1 0 0 1 2.002 1.691c.422.846.648 1.776.66 2.722a9.55 9.55 0 0 1-1.68 5.163a8.9 8.9 0 0 1-4.203 3.462a.31.31 0 0 0-.19.4a.31.31 0 0 0 .4.2a9.6 9.6 0 0 0 4.622-3.632a10.54 10.54 0 0 0 1.892-5.583a6.9 6.9 0 0 0-1-3.743a3.77 3.77 0 0 0-2.192-1.66a4.06 4.06 0 0 0-2.702.25a5 5 0 0 0-2.081 1.68a8.4 8.4 0 0 0-.53 1.121a5.1 5.1 0 0 0-1.501-1.36a5.37 5.37 0 0 0-3.853-.55a3.28 3.28 0 0 0-2.151 1.73a6.17 6.17 0 0 0 .28 6.204a14 14 0 0 0 6.844 5.403c.34.16.52-.28.32-.49A13.44 13.44 0 0 1 4.51 8.79"
+                            ></path><path
+                                d="M22.04 16.134a1.15 1.15 0 0 0-.34-.75a.88.88 0 0 0-.67-.13c-.52.08-1.831.39-1.942.4a6.94 6.94 0 0 0-4.562 2.001a7 7 0 0 0-1.631 4.002c-.08-.5-.15-1-.22-1.58s-.17-1.221-.26-1.812a35 35 0 0 1-.48-3.602a.27.27 0 0 0-.251-.3c-.78-.08-.36 1.3-.36 3.562q.036.706.16 1.401c.07.46.16.93.26 1.381a1 1 0 0 0 0 .15a8.5 8.5 0 0 0-2.271-2.201a4.87 4.87 0 0 0-2.832-.69a5.2 5.2 0 0 0-1.24.22c-.571.16-1.122.4-1.662.6l-.9.3h-.48a.59.59 0 0 0-.428.56c0 .107.03.21.087.3c.197.28.453.513.75.68c.52.321 1.241.591 1.581.791a15.3 15.3 0 0 0 4.683 1.962a5.52 5.52 0 0 0 3.432-.37q.164.425.39.82a.321.321 0 0 0 .571-.3a1 1 0 0 1-.09-.22a.3.3 0 0 0 .3 0a5.2 5.2 0 0 1 1.471-.74a19.8 19.8 0 0 0 4.002-1.292a6.5 6.5 0 0 0 1.812-1.63a6 6 0 0 0 1.06-2.232c.093-.42.113-.854.06-1.28m-9.806 6.294a4.9 4.9 0 0 1-3.002.18a14.4 14.4 0 0 1-4.282-2.061c-.28-.17-.78-.39-1.24-.64l.47-.15c.52-.21 1-.44 1.59-.621q.489-.172 1-.24a4.06 4.06 0 0 1 2.372.43a10.2 10.2 0 0 1 3.102 3.102zm8.806-5.813a5 5 0 0 1-.09.56a5.1 5.1 0 0 1-.911 1.83a5.5 5.5 0 0 1-1.47 1.452a19.6 19.6 0 0 1-3.743 1.39a6 6 0 0 0-1.631.911v.1c0 .03-.05-.21-.08-.32a.27.27 0 0 0 .28-.24a6.8 6.8 0 0 1 1.751-4.093a6.08 6.08 0 0 1 4.063-1.53c.1 0 1.18-.25 1.81-.35q.02.143.02.29"
+                            ></path></g
+                        ></svg
+                    >
+                    <h3 class="text-xl font-bold mb-2">Zakaat &amp; Relief</h3>
+                    <p class="text-on-primary/80 text-sm mb-6">
+                        Empowering our community through structured financial
+                        support and transparent Zakaat distribution.
+                    </p>
+                    <button
+                        class="w-full bg-white/20 backdrop-blur-md border border-white/30 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-white/30 transition-colors"
+                    >
+                        Financial Aid Form
+                    </button>
+                </div>
+                <!-- Social Services -->
+                <div
+                    class="md:col-span-4 bg-surface-container-high rounded-xl p-8 shadow-sm"
+                >
+                    <h3 class="text-xl font-bold mb-3">Social Services</h3>
+                    <ul class="space-y-3">
+                        <li
+                            class="flex items-center gap-2 text-sm text-slate-600"
+                        >
+                            <Circle />
+                            Food Pantry Access
+                        </li>
+                        <li
+                            class="flex items-center gap-2 text-sm text-slate-600"
+                        >
+                            <Circle />
+                            Local Assistance
+                        </li>
+                        <li
+                            class="flex items-center gap-2 text-sm text-slate-600"
+                        >
+                            <Circle />
+                            Elderly Support
+                        </li>
+                    </ul>
+                </div>
+                <!-- Outreach -->
+                <div
+                    class="md:col-span-12 bg-white rounded-xl p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8 border-2 border-dashed border-emerald-100"
+                >
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1em"
+                                height="1em"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    fill="#2d9d56"
+                                    d="M8.1 21.213q-1.825-.788-3.175-2.138T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22t-3.9-.788M11 19.95V18q-.825 0-1.412-.587T9 16v-1l-4.8-4.8q-.075.45-.137.9T4 12q0 3.025 1.988 5.3T11 19.95m6.9-2.55q1.025-1.125 1.563-2.512T20 12q0-2.45-1.362-4.475T15 4.6V5q0 .825-.587 1.413T13 7h-2v2q0 .425-.288.713T10 10H8v2h6q.425 0 .713.288T15 13v3h1q.65 0 1.175.388T17.9 17.4"
+                                ></path></svg
+                            >
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">
+                                Da'wah &amp; Outreach
+                            </h3>
+                            <p class="text-slate-500">
+                                Interested in learning more about the faith?
+                                Start your journey here.
+                            </p>
+                        </div>
+                    </div>
+                    <a
+                        class="bg-slate-900 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-emerald-500 transition-colors"
+                        href="islam101"
+                    >
+                        Intro to Islam
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Programs Section (Visual Cards) -->
+        <section>
+            <div class="flex items-center gap-4 mb-10">
+                <h2 class="text-4xl font-black tracking-tight">
+                    Active Programs
+                </h2>
+                <div class="grow h-px bg-outline-variant/50"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Youth -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative h-64 rounded-xl overflow-hidden mb-4 shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            data-alt="diverse group of smiling young adults in a modern community center setting, laughing and talking"
+                            src="https://iant-ci-cd.fuad-a8b.workers.dev/api/media/file?key=1776052234155-Screenshot_2026-04-12_at_10.49.55_PM.jpg"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-slate-900/80 to-transparent"
+                        >
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span
+                                class="px-2 py-1 bg-emerald-500 text-[10px] font-bold text-white uppercase tracking-widest rounded"
+                                >Youth</span
+                            >
+                        </div>
+                    </div>
+                    <h4
+                        class="text-xl font-bold mb-2 group-hover:text-emerald-500 transition-colors"
+                    >
+                        IANT Youth
+                    </h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Engaging programs designed to empower the next
+                        generation with values and community.
+                    </p>
+                </div>
+                <!-- Sports -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative h-64 rounded-xl overflow-hidden mb-4 shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            data-alt="dynamic shot of a basketball through a hoop with a blurred background of a sports hall"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAseExoemaOeYB1DoYHJ34ielkX-uMOp_GbFdXZqOlZY1Q0-QkM-SoblN7UsNta24QOZRp8o3WM62ySFCh3qIHI0ZadWrlx8mtga6CgpRg4vYWHFJnzpwFSPWlw87L0xjfDzuLh8LUj_f5AvfSMOHax9zv-y7VSKlgxCwuoQlhkjV0pwgTqLUIOcc4Zo_toi6kL0PnK6-DQllW03o_70C4Szcdj_9rlr7EslF_HR9abH5SouQpGlCgPqYbnC3uPshEGqrf--7GR2cdn"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-slate-900/80 to-transparent"
+                        >
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span
+                                class="px-2 py-1 bg-emerald-500 text-[10px] font-bold text-white uppercase tracking-widest rounded"
+                                >Athletics</span
+                            >
+                        </div>
+                    </div>
+                    <h4
+                        class="text-xl font-bold mb-2 group-hover:text-emerald-500 transition-colors"
+                    >
+                        IANT Sports
+                    </h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Community leagues, weekend tournaments, and active
+                        lifestyle initiatives for all ages.
+                    </p>
+                </div>
+                <!-- Clinic -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative h-64 rounded-xl overflow-hidden mb-4 shadow-lg"
+                    >
+                        <img
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            data-alt="clean modern medical clinic interior with soft white lighting and professional medical equipment"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6VSLUXuEaJqB09dRVLf_Ay0BuifL3IsWG44eZViKS2PYv0sKoD-jhtVmsSt1uVjxKTCFRoqQo7I2E4fnrbHeOGfB-dP-igtmwPBx8baRujJ8z-P5PBljCc0onlN0zEj1iTjhQGHslFK7R7gD0MObIE6V2EPnq5GbmkR87v_qw-kkzY5P2jZsCgHmmAMhAqzTA9XJn2A_4K1NlFt-QKCt53pvyavRdc5Mr-_-4AfPX0Qch0O0IG3VoLw0INOVWP365qaFezoNaS_Sq"
+                        />
+                        <div
+                            class="absolute inset-0 bg-linear-to-t from-slate-900/80 to-transparent"
+                        >
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span
+                                class="px-2 py-1 bg-emerald-500 text-[10px] font-bold text-white uppercase tracking-widest rounded"
+                                >Wellness</span
+                            >
+                        </div>
+                    </div>
+                    <h4
+                        class="text-xl font-bold mb-2 group-hover:text-emerald-500 transition-colors"
+                    >
+                        Medical Clinic
+                    </h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Accessible health services and professional wellness
+                        checks for community members.
+                    </p>
+                </div>
+                <!-- Sisters' Committee -->
+                <div
+                    class="bg-surface-container rounded-xl p-8 border-l-4 border-emerald-500"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 24 24"
+                            ><circle cx="4" cy="14" r="2" fill="#2d9d56"
+                            ></circle><path
+                                fill="#2d9d56"
+                                d="M1.22 17.58A2.01 2.01 0 0 0 0 19.43V21h4.5v-1.61c0-.83.23-1.61.63-2.29c-.37-.06-.74-.1-1.13-.1c-.99 0-1.93.21-2.78.58"
+                            ></path><circle cx="20" cy="14" r="2" fill="#2d9d56"
+                            ></circle><path
+                                fill="#2d9d56"
+                                d="M22.78 17.58A6.95 6.95 0 0 0 20 17c-.39 0-.76.04-1.13.1c.4.68.63 1.46.63 2.29V21H24v-1.57c0-.81-.48-1.53-1.22-1.85m-6.54-.93c-1.17-.52-2.61-.9-4.24-.9s-3.07.39-4.24.9A2.99 2.99 0 0 0 6 19.39V21h12v-1.61c0-1.18-.68-2.26-1.76-2.74M9 12c0 1.66 1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3s-3 1.34-3 3"
+                            ></path><path
+                                fill="#2d9d56"
+                                d="M2.48 10.86C2.17 10.1 2 9.36 2 8.6C2 6.02 4.02 4 6.6 4c2.68 0 3.82 1.74 5.4 3.59C13.57 5.76 14.7 4 17.4 4C19.98 4 22 6.02 22 8.6c0 .76-.17 1.5-.48 2.26c.65.31 1.18.82 1.53 1.44c.6-1.2.95-2.42.95-3.7C24 4.9 21.1 2 17.4 2c-2.09 0-4.09.97-5.4 2.51C10.69 2.97 8.69 2 6.6 2C2.9 2 0 4.9 0 8.6c0 1.28.35 2.5.96 3.7c.35-.62.88-1.13 1.52-1.44"
+                            ></path></svg
+                        >
+                        <h4 class="text-xl font-bold">Sisters' Committee</h4>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">
+                        Dedicated space, educational circles, and community
+                        events exclusively for women.
+                    </p>
+                    <button
+                        class="text-emerald-600 text-xs font-black uppercase tracking-widest hover:underline"
+                        >View Calendar</button
+                    >
+                </div>
+                <!-- Young Muslims -->
+                <div
+                    class="bg-surface-container rounded-xl p-8 border-l-4 border-slate-900"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 24 24"
+                            ><path
+                                fill="#2d9d56"
+                                d="m12 21l-7-3.8v-6L1 9l11-6l11 6v8h-2v-6.9l-2 1.1v6zm0-8.3L18.85 9L12 5.3L5.15 9zm0 6.025l5-2.7V12.25L12 15l-5-2.75v3.775zm0-3.775"
+                            ></path></svg
+                        >
+                        <h4 class="text-xl font-bold">Young Muslims</h4>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">
+                        Highlighting the flagship Summer School and the
+                        intensive Young Muslim mentorship program.
+                    </p>
+                    <button
+                        class="text-slate-900 text-xs font-black uppercase tracking-widest hover:underline"
+                        >Enroll Now</button
+                    >
+                </div>
+                <!-- Muhsen -->
+                <div
+                    class="bg-emerald-600 text-white rounded-xl p-8 relative overflow-hidden"
+                >
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1em"
+                                height="1em"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    fill="#2d9d56"
+                                    d="M10.588 5.413Q10 4.825 10 4t.588-1.412T12 2t1.413.588T14 4t-.587 1.413T12 6t-1.412-.587M9 22V9H3V7h18v2h-6v13h-2v-6h-2v6z"
+                                ></path></svg
+                            >
+                            <h4 class="text-xl font-bold">Muhsen</h4>
+                        </div>
+                        <p class="text-white/80 text-sm mb-4">
+                            Certified support for special education and
+                            community members with accessibility needs.
+                        </p>
+                        <button
+                            class="bg-white text-emerald-600 px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest"
+                            >Learn More</button
+                        >
+                    </div>
+                    <div class="absolute -right-4 -bottom-4 opacity-10">
+                        <span class="material-symbols-outlined text-9xl"
+                            >favorite</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</Layout>
